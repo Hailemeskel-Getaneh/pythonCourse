@@ -1,15 +1,25 @@
 users = []
 user = {}
-name = input("Enter the user name :")
-age = input("Enter the user age :")
-sex = input("Entert the user sex :")
+response = 'y'
+while response.lower() == 'y':
+    name = input("Enter the user name :")
+    age = input("Enter the user age :")
+    sex = input("Entert the user sex :")
+   
+    user = {"name":name, "age":age, "sex":sex}
+    users.append(user)
 
-user = {"name":name, "age":age, "sex":sex}
+    response = input("Enter y to continue and other to exit:")
 
-users.append(user)
+females= []
+males = []
 
 for user in users:
     if user.get('sex')== 'female':
-        pass
+        females.append(user)
+        
     else:
-        print(user)
+        males.append(user)
+
+print("males " + males)
+print("females "+ females)
